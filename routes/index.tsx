@@ -1,9 +1,6 @@
-import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import AddTodo from "../islands/AddTodo.tsx";
 import TodoList from "../islands/TodoList.tsx";
-
-import { getAll, Todo } from "../utils/todos.ts";
 
 export const handler: Handlers = {
   async GET(req, ctx) {
