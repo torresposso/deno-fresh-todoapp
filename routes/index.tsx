@@ -2,19 +2,7 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import AddTodo from "../islands/AddTodo.tsx";
 import TodoList from "../islands/TodoList.tsx";
 
-export const handler: Handlers = {
-  async GET(req, ctx) {
-    const todos = await (await fetch(req.url + "api/todos")).json();
-
-    return ctx.render({ todos });
-  },
-
-  async POST(req, ctx) {
-    return await ctx.render();
-  },
-};
-
-export default function Home({ data }: PageProps) {
+export default function Home() {
   return (
     <>
       <div>

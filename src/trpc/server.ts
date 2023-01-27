@@ -2,7 +2,6 @@ import { initTRPC } from "@trpc/server";
 import { Context } from "./fetch-context.ts";
 import { z } from "zod";
 import { createOne, deleteOne, getAll } from "../../utils/todos.ts";
-import { todos } from "../../utils/state.ts";
 
 const t = initTRPC.context<Context>().create();
 
