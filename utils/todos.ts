@@ -47,9 +47,9 @@ export const updateOne = async (id: string, updatedData: unknown) => {
   return { matchedCount, modifiedCount };
 };
 
-export const deleteOne = async (id: string) => {
+export const deleteOne = async (_id: string) => {
   const { deletedCount } = await instance.deleteOne("todos", {
-    "_id": { "$oid": id },
+    "_id": { "$oid": _id },
   });
 
   return deletedCount;

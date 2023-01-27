@@ -1,25 +1,24 @@
-import { useState } from "preact/hooks";
+import { useRef } from "preact/hooks";
 import { trpc } from "@/src/trpc/client.ts";
 import { todos } from "../utils/state.ts";
 
 const AddTodo = () => {
-  const [text, setText] = useState("");
+  const input = useRef<HTMLInputElement>(null);
 
   return (
     <form
       onSubmit={async (e) => {
         e.preventDefault();
-        const newTodo = await trpc.createOne.mutate(text);
+        const newTodo = await trpc.createOne.mutate(input.current?.value!);
         console.log("new todo", newTodo);
         todos.value = [...todos.value, newTodo];
-        return setText("");
+        input.current!.value = "";
       }}
     >
       <input
         class="text-gray-800"
         type="text"
-        value={text}
-        onInput={(e) => setText((e.target as HTMLInputElement).value)}
+        ref={input}
       />
       <div>
         <input type="submit" value="enviar" />

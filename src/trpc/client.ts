@@ -1,4 +1,4 @@
-import { createTRPCProxyClient, httpBatchLink } from "@trpc/client";
+import { createTRPCProxyClient, httpBatchLink, loggerLink } from "@trpc/client";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 
 import type { AppRouter } from "./server.ts";
@@ -17,6 +17,7 @@ if (IS_BROWSER) {
 
 export const trpc = createTRPCProxyClient<AppRouter>({
   links: [
+    loggerLink(),
     httpBatchLink({
       url: `${host}/trpc`,
     }),

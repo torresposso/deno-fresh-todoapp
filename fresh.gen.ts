@@ -11,8 +11,9 @@ import * as $4 from "./routes/index.tsx";
 import * as $5 from "./routes/trpc/[...path].ts";
 import * as $$0 from "./islands/AddTodo.tsx";
 import * as $$1 from "./islands/Counter.tsx";
-import * as $$2 from "./islands/TodoItem.tsx";
-import * as $$3 from "./islands/TodoList.tsx";
+import * as $$2 from "./islands/DeleteTodo.tsx";
+import * as $$3 from "./islands/TodoItem.tsx";
+import * as $$4 from "./islands/TodoList.tsx";
 
 const manifest = {
   routes: {
@@ -26,8 +27,9 @@ const manifest = {
   islands: {
     "./islands/AddTodo.tsx": $$0,
     "./islands/Counter.tsx": $$1,
-    "./islands/TodoItem.tsx": $$2,
-    "./islands/TodoList.tsx": $$3,
+    "./islands/DeleteTodo.tsx": $$2,
+    "./islands/TodoItem.tsx": $$3,
+    "./islands/TodoList.tsx": $$4,
   },
   baseUrl: import.meta.url,
   config,

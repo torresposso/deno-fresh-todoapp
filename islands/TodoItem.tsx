@@ -1,4 +1,5 @@
 import { Todo } from "../utils/todos.ts";
+import DeleteTodo from "./DeleteTodo.tsx";
 
 const TodoItem = ({ text, _id, isCompleted }: Todo) => {
   const markCompleted = () => {
@@ -9,7 +10,7 @@ const TodoItem = ({ text, _id, isCompleted }: Todo) => {
         {text}
       </div>
       <button>OK</button>
-      <button>X</button>
+      <DeleteTodo _id={_id} />
     </div>
   );
 };
